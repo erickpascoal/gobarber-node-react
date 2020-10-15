@@ -16,8 +16,6 @@ export const Icon = styled(FeatherIcon)`
   margin-right: 16px;
 `;
 
-
-
 export const TextInput = styled.TextInput`
   flex: 1;
   color: #fff;

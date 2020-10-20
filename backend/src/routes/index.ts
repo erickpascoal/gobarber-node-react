@@ -7,6 +7,6 @@ const routes = Router();
 
 routes.use('/appointments', appointmentsRouter);
 routes.use('/user', userRouter);
-routes.use('/auth', authRouter);
+routes.use('/sessions', authRouter);
 
 export default routes;

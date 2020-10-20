@@ -11,6 +11,7 @@ authRouter.post('/', async (request, response) => {
         const createAuthService = new CreateAuthService();
 
         const { user, token } = await createAuthService.execute({ email, password });
+        console.log(user, token);
 
         delete user.password;
 

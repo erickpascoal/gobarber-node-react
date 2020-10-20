@@ -1,7 +1,7 @@
 import React from 'react';
 import { AuthProvider } from './context/AuthContext';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+import Routes from './routes';
+import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyles from './styles/global';
 
@@ -9,8 +9,9 @@ function App() {
   return (
     <>
       <AuthProvider>
-        {/* <SignUp /> */}
-        <SignIn />
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
       </AuthProvider>
       <GlobalStyles />
     </>

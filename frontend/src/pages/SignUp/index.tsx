@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback } from 'react';
 
 import { FiArrowLeft, FiUser } from 'react-icons/fi';
 import { FiMail } from 'react-icons/fi';
@@ -10,7 +10,8 @@ import { Form } from '@unform/web'
 
 
 import { Background, Container, Content } from './styles';
-import { AuthContext } from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
+import { Link } from 'react-router-dom';
 
 interface SignInFormData {
     name: string;
@@ -20,8 +21,7 @@ interface SignInFormData {
 
 const SignUp: React.FC = () => {
 
-    const { signUp } = useContext(AuthContext);
-
+    const { signUp } = useAuth();
 
     const handleSubimt = useCallback(async (data: SignInFormData) => {
         console.log(data);
@@ -42,7 +42,6 @@ const SignUp: React.FC = () => {
             <Content>
                 <img src={LogoImg} alt="GoBarber" />
 
-
                 <Form onSubmit={handleSubimt}>
                     <h1>Faça seu cadastro</h1>
 
@@ -53,10 +52,10 @@ const SignUp: React.FC = () => {
                     <Button type="submit">Cadastrar</Button>
                 </Form>
 
-                <a href="">
+                <Link to="/">
                     <FiArrowLeft />
                     Voltar para logon
-                </a>
+                </Link>
             </Content>
         </Container>
     );
